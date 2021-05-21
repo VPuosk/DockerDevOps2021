@@ -1,0 +1,7 @@
+C:\Users\vesa_>docker ps -a
+CONTAINER ID   IMAGE               COMMAND                  CREATED              STATUS                      PORTS     NAMES
+d767977e0e28   nginx               "/docker-entrypoint.…"   About a minute ago   Exited (0) 3 seconds ago              dazzling_pasteur
+8428ea93be63   nginx               "/docker-entrypoint.…"   About a minute ago   Exited (0) 17 seconds ago             festive_mendel
+c990e862cf23   nginx               "/docker-entrypoint.…"   3 minutes ago        Up 3 minutes                80/tcp    stoic_ardinghelli
+c679ea9dc022   docker101tutorial   "/docker-entrypoint.…"   43 hours ago         Exited (137) 43 hours ago             docker-tutorial
+9b27831cdf62   alpine/git          "git clone https://g…"   43 hours ago         Exited (0) 43 hours ago               repo
