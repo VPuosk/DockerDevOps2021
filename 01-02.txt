@@ -1,0 +1,24 @@
+docker ps -as
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES     SIZE
+
+
+docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+
+
+
+Before cleanup:
+
+docker ps -as
+CONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS                      PORTS     NAMES               SIZE
+d767977e0e28   nginx               "/docker-entrypoint.…"   8 minutes ago    Exited (0) 7 minutes ago              dazzling_pasteur    1.11kB (virtual 133MB)
+8428ea93be63   nginx               "/docker-entrypoint.…"   8 minutes ago    Exited (0) 7 minutes ago              festive_mendel      1.11kB (virtual 133MB)
+c990e862cf23   nginx               "/docker-entrypoint.…"   10 minutes ago   Exited (0) 6 minutes ago              stoic_ardinghelli   1.11kB (virtual 133MB)
+c679ea9dc022   docker101tutorial   "/docker-entrypoint.…"   44 hours ago     Exited (137) 43 hours ago             docker-tutorial     1.12kB (virtual 28MB)
+9b27831cdf62   alpine/git          "git clone https://g…"   44 hours ago     Exited (0) 44 hours ago               repo                0B (virtual 25.1MB)
+
+docker images
+REPOSITORY          TAG       IMAGE ID       CREATED        SIZE
+docker101tutorial   latest    3f674af9288c   44 hours ago   28MB
+alpine/git          latest    2abeafdff5b9   4 days ago     25.1MB
+nginx               latest    f0b8a9a54136   8 days ago     133MB
