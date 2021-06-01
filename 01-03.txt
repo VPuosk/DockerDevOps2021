@@ -1,11 +1,12 @@
 Secret message:
 'You can find the source code here: https://github.com/docker-hy'
 
-Commands:
 
-CMD #1:     docker run -it devopsdockeruh/simple-web-service:ubuntu
-CMD #2:     docker ps -a
-    (container id was: 0bbae10480d5)
-CMD #2:     docker exec -it 0b bash
-BASH:       ls
-BASH:       tail -f ./text.log
+COMMANDS:
+
+    CMD #1:     docker run -it devopsdockeruh/simple-web-service:ubuntu
+    CMD #2:     docker ps -a
+        (container id was: 0bbae10480d5)
+    CMD #2:     docker exec -it 0b bash
+    BASH:       ls
+    BASH:       tail -f ./text.log

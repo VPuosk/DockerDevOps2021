@@ -1,0 +1,16 @@
+COMMANDS:
+
+    PS:     docker build . -t takakontti
+    PS:     docker run -p 8080:8080 -d takakontti
+
+
+DOCKERFILE:
+
+    FROM golang:1.16
+    EXPOSE 8080
+    WORKDIR /usr/src/app
+    COPY ./example-backend .
+    ENV PORT=8080
+    ENV REQUEST_ORIGIN="http://localhost:5000"
+    RUN go build
+    CMD ["./server"]

@@ -1,18 +1,21 @@
-CMD #1:         docker run -it ubuntu sh -c "echo 'Input website:'; read website; echo 'Searching..'; sleep 1; curl http://$website;"
+COMMANDS:
 
-CMD #2:         docker ps -a
-    (container id: 49651352642a)
-CMD #2:         docker exec -it 49 bash
-CMD #2/BASH:        apt-get update
-CMD #2/BASH:        apt-get install curl
+    CMD #1:         docker run -it ubuntu sh -c "echo 'Input website:'; read website; echo 'Searching..'; sleep 1; curl http://$website;"
 
-CMD #1:         helsinki.fi
+    CMD #2:         docker ps -a
+        (container id: 49651352642a)
+    CMD #2:         docker exec -it 49 bash
+    CMD #2/BASH:        apt-get update
+    CMD #2/BASH:        apt-get install curl
 
-Returned:
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>301 Moved Permanently</title>
-</head><body>
-<h1>Moved Permanently</h1>
-<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
-</body></html>
+    CMD #1:         helsinki.fi
+
+
+OUTPUT:
+    <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+    <html><head>
+    <title>301 Moved Permanently</title>
+    </head><body>
+    <h1>Moved Permanently</h1>
+    <p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+    </body></html>
