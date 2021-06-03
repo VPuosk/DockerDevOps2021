@@ -1,0 +1,29 @@
+version: '3' 
+
+services:
+    front:  
+        image: etukontti
+        ports:
+            - 5000:5000
+    back:
+        image: takakontti
+        ports:
+            - 8080:8080
+        environment: 
+            REDIS_HOST: oma_redis
+            POSTGRES_HOST: postgres_db
+            POSTGRES_USER: tietokantailija
+            POSTGRES_PASSWORD: salasana
+            POSTGRES_DATABASE: postgres
+    redis-db:
+        image: redis
+        ports:
+            - 6379:6379
+        container_name: oma_redis
+    postgres-db:
+        image: postgres:13.3-alpine
+        container_name: postgres_db
+        restart: unless-stopped
+        environment:
+            POSTGRES_USER: tietokantailija
+            POSTGRES_PASSWORD: salasana
