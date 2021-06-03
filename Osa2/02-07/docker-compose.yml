@@ -1,0 +1,24 @@
+version: '3' 
+
+services: 
+    train:  
+        image: km-train
+        volumes: 
+            - model:/src/model
+            - imgs:/src/imgs
+            - data:/src/data
+    back:  
+        image: km-back
+        ports:
+            - 5000:5000
+        volumes: 
+            - model:/src/model
+    front:
+        image: km-front
+        ports:
+            - 3000:3000
+
+volumes:
+    model:
+    imgs:
+    data:
