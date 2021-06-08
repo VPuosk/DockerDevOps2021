@@ -1,0 +1,11 @@
+FROM docker
+
+WORKDIR /jokinmuu
+
+COPY ./runscript.sh ./
+
+RUN apk update
+
+RUN apk add git
+
+CMD ["sh", "./runscript.sh"]
