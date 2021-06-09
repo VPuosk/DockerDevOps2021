@@ -1,0 +1,20 @@
+    FROM ubuntu:18.04
+    EXPOSE 8080
+    WORKDIR /usr/src/app
+    COPY ./example-backend .
+    
+    ENV PORT=8080
+    ENV REQUEST_ORIGIN="http://localhost:5000"
+
+    RUN apt-get update && apt-get install -y wget && \
+        wget https://golang.org/dl/go1.16.5.linux-amd64.tar.gz -P /usr/local && \
+        tar -C /usr/local -xzf /usr/local/go1.16.5.linux-amd64.tar.gz && \
+        export PATH=$PATH:/usr/local/go/bin && \
+        go build && \
+        useradd -m kayttaja && \
+        apt-get purge -y --auto-remove wget && \ 
+        rm -rf /var/lib/apt/lists/*
+
+    USER kayttaja
+
+    CMD ["./server"]

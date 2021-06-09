@@ -1,0 +1,8 @@
+Image sizes after 03-03:
+    Frontend:   1.15 GB
+    Backend:    1.01 GB
+
+Image sizes after 03-04:
+    Frontend:   466 MB
+    Backend:    731 MB
+
