@@ -1,0 +1,16 @@
+#using any ubuntu image as starting point
+FROM ubuntu
+# setting working directory
+WORKDIR /usr/src/app
+# copying over the c++ code
+COPY ./koodi.cpp .
+# installing g++ compiler
+RUN apt-get update
+RUN apt-get install -y g++
+# running the compiler in normal mode
+RUN g++ -o exefillet koodi.cpp
+# executing the resulting file
+CMD ["./exefillet"]
+
+# in this case the koodi.cpp was simple 'hello world'
+# size of the resulting docker image was 264 MB

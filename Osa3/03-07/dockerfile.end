@@ -1,0 +1,27 @@
+# using multi-stage approach
+# setting Linux Alpine as the builder
+FROM alpine:3.13 AS builder
+# defining the working directory
+WORKDIR /usr/src/app
+# copying over the c++ code
+COPY ./koodi.cpp .
+# installing g++
+# compiling the code in static mode
+# setting up the user
+RUN apk --no-cache add g++ && \
+    g++ -o exefillet --static koodi.cpp && \
+    adduser -D someuser
+
+# using scratch as the base
+FROM scratch
+# copying over the user
+# copying over the executable
+COPY --from=builder /etc/passwd /etc/passwd
+COPY --from=builder /usr/src/app/exefillet /
+# setting a non-privileged user
+USER someuser
+# executing the file
+ENTRYPOINT ["/exefillet"]
+
+# in this case the koodi.cpp was simple 'hello world'
+# Resulting image had the size of 7.2 MB
