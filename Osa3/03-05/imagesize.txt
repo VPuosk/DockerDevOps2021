@@ -1,0 +1,11 @@
+Image sizes after 03-03:
+    Frontend:   1.15 GB
+    Backend:    1.01 GB
+
+That is using FROM goland and FROM node
+
+Image sizes after 03-05:
+    Frontend:   171 MB
+    Backend:    447 MB
+
+Using node:alpine and golang:alpine (but otherwise mostly unoptimized)

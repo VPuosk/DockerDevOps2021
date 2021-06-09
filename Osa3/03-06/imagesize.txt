@@ -1,0 +1,11 @@
+Image sizes after 03-03:
+    Frontend:   1.15 GB
+    Backend:    1.01 GB
+
+That is using FROM goland and FROM node
+
+Image sizes after 03-06:
+    Frontend:   69.3 MB
+    Backend:    18.2 MB
+
+Using alpine for frontend and scratch for backend
